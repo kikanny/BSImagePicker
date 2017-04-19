@@ -34,12 +34,14 @@ extension UIButton {
     func bs_setTitleWithoutAnimation(title: String?, forState state: UIControlState) {
         // Disable/enable animations
         UIView.setAnimationsEnabled(false)
-        
+
         // Set title without the default animation
         self.setTitle(title, forState: state)
         self.layoutIfNeeded()
-        
+
         // Enable animations
         UIView.setAnimationsEnabled(true)
+
+        superview?.setNeedsLayout()
     }
 }
